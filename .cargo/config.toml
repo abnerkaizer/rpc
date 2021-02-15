@@ -1,0 +1,9 @@
+[alias]
+rr = "run --release"
+br = "build --release"
+cr = "check --release"
+f = "fmt"
+server = "run --bin server"
+client = "run --bin client"
+[build]
+target = "x86_64-unknown-linux-musl"
