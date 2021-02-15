@@ -1,3 +1,5 @@
+use server::run;
+
 fn main() {
-    println!("Hello, world!");
+    run();
 }
