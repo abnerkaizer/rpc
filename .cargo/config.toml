@@ -5,3 +5,7 @@ cr = "check --release"
 f = "fmt"
 server = "run --bin server"
 client = "run --bin client"
+rserver = "run --release --bin server"
+rclient = "run --release --bin client"
+[build]
+target = "x86_64-unknown-linux-musl"
