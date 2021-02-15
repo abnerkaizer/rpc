@@ -31,7 +31,7 @@ impl World for Server {
         format!("{}", contents)
     }
     async fn write_file(self, _: context::Context, file: String, contents: String) {
-        match fs::write(file, contents){
+        match fs::write(file, contents) {
             Ok(result) => result,
             Err(e) => eprintln!("Failed to write file, error: {:?}", e),
         };
