@@ -76,6 +76,10 @@ async fn main() -> io::Result<()> {
         client
             .write_file(context::current(), output, contents)
             .await?;
+    }else if input=="" && output==""{
+        
+    }else {
+        println!("Need both input and output files.");
     }
 
     Ok(())
