@@ -1,6 +1,7 @@
 use clap::App;
 use futures::prelude::*;
 use service::World;
+use std::fs;
 use std::{
     io,
     net::{IpAddr, SocketAddr},
@@ -16,8 +17,21 @@ struct Server(SocketAddr);
 
 #[tarpc::server]
 impl World for Server {
-    async fn init(self, _: context::Context, name: String) -> String {
+    async fn hello(self, _: context::Context, name: String) -> String {
         format!("Hello, {} !", name)
+    }
+    async fn read_file(self, _: context::Context, file: String) -> String {
+        let contents = match fs::read_to_string(file) {
+            Ok(contents) => contents,
+            Err(e) => {
+                eprintln!("Couldn't read file, error: {}", e);
+                "".to_string()
+            }
+        };
+        format!("{}", contents)
+    }
+    async fn write_file(self, _: context::Context, file: String, contents: String) {
+        fs::write(file, contents).unwrap();
     }
 }
 
