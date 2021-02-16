@@ -46,7 +46,8 @@ async fn main() -> io::Result<()> {
     let _flags = App::new("Server")
         .version("0.1")
         .author("Abner Kaizer <abnerkaizer@protonmail.com>")
-        .about("Simple RPC server.");
+        .about("Simple RPC server.")
+        .get_matches();
     let port = String::from("9090");
     let port = port.parse().expect("Failed to parse.");
     let server_addr = (IpAddr::from([0, 0, 0, 0]), port);
