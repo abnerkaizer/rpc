@@ -8,5 +8,4 @@ edition = "2018"
 
 [dependencies]
 
-tarpc = { version = "0.24.1", features = ["tokio1","serde-transport","tcp"] }
-tokio = { version = "1.0", features = ["macros"] }
+tarpc = "0.24.1"

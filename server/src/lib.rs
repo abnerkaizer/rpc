@@ -72,5 +72,8 @@ async fn main() -> io::Result<()> {
     Ok(())
 }
 pub fn run() {
-    main().unwrap();
+    match main(){
+        Ok(r) => r,
+        Err(_e) => ()
+    }
 }

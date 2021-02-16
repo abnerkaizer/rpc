@@ -2,6 +2,7 @@ use clap::{App, Arg};
 use service::WorldClient;
 use std::{io, net::SocketAddr};
 use tarpc::{client, context, tokio_serde::formats::Json};
+
 #[tokio::main]
 async fn main() -> io::Result<()> {
     env_logger::init();
@@ -84,5 +85,8 @@ async fn main() -> io::Result<()> {
     Ok(())
 }
 pub fn run() {
-    main().unwrap();
+    match main(){
+        Ok(r) => r,
+        Err(_e) => ()
+    }
 }
