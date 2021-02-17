@@ -10,7 +10,7 @@ async fn main() -> io::Result<()> {
     let flags = App::new("Client")
         .version("0.1")
         .author("Abner Kaizer <abnerkaizer@protonmail.com>")
-        .about("Output a 'Hello, <NAME> !' or ")
+        .about("Output a 'Hello, <NAME> !' or copy a file")
         .arg(
             Arg::with_name("name")
                 .short("n")
